@@ -7,9 +7,13 @@ The goal of this project is to recognize and predict human actions from videos. 
 
 ### Prosposed Model
 
-![Model flowchart](extras/flow.PNG)
+![Model flowchart](extras/flow.png)
 
 For feature extraction, a CNN is trained on multiple frames of the entire video and on each frame of an area which suitable for human action detection, such as the swipe left, swipe right. This CNN is followed by one or multiple layers of a regular (dense) neural network for discrimination of the features.
     The output of this network is fed into the second part, which handles temporal relationships. Without temporal part, classifications are not up to the mark by only CNN. There are different possibilities how to model the temporal part. On the one hand, state-of-the-art methods, Recurrent Neural Network, could be used. On the other hand, Multilayer Perceptron is of particular interests for this project. LSTMs are reported to perform well on temporal data and MLP performed way better than LSTMs. Therefore, MLP are chosen for this part, followed by one or multiple layers of a regular neural network for discrimination of the features.
+    
+
+
+Launcher.vbs is a simple Visual basic script which creates a Window Shell object where it will run human_recogintion.py file which is a GUI where we feed the sample video and the activity will be predicted.
 
 
